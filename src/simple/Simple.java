@@ -48,5 +48,13 @@ public class Simple extends JFrame {
 
     public static void main(String[] args) {
         Simple simple = new Simple();
+        Complex test1 = new Complex(3, 4);
+        Complex test2 = new Complex(2, 5);
+        Complex.printComplex(Complex.addComplex(test1, test2));
+        Complex.printComplex(Complex.subComplex(test1, test2));
+        Complex.printComplex(Complex.multComplex(test1, test2));
+        Complex.printComplex(Complex.divComplex(test1, test2));
+        
+                
     } // main ( S t r i n g [ ] )
 } // S imple

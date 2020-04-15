@@ -12,8 +12,8 @@ package simple;
  */
 public class Complex {
     
-    int r;
-    int i;
+    double r;
+    double i;
     
     Complex() {
         
@@ -25,7 +25,7 @@ public class Complex {
         i = yImaginary;
     } //Complex(int, int)
     
-    public Complex addComplex(Complex comp1, Complex comp2) {
+    public static Complex addComplex(Complex comp1, Complex comp2) {
         
         Complex result = new Complex();
         
@@ -35,7 +35,7 @@ public class Complex {
         return result;
     } //addComplex(Complex, Complex)
     
-    public Complex subComplex(Complex comp1, Complex comp2) {
+    public static Complex subComplex(Complex comp1, Complex comp2) {
         
         Complex result = new Complex();
         
@@ -45,7 +45,7 @@ public class Complex {
         return result;
     } //subComplex(Complex, Complex)
     
-    public Complex multComplex(Complex comp1, Complex comp2) {
+    public static Complex multComplex(Complex comp1, Complex comp2) {
         
         Complex result = new Complex();
         
@@ -55,35 +55,35 @@ public class Complex {
         return result;
     } //multComplex(Complex, Complex)
     
-    public Complex divComplex(Complex comp1, Complex comp2) {
+    public static Complex divComplex(Complex comp1, Complex comp2) {
         
         Complex result = new Complex();
         
         result.r = ((comp1.r * comp2.r) + (comp1.i * comp2.i)) / ((comp2.r * comp2.r) + (comp2.i * comp2.i));
-        result.i = ((comp1.i * comp2.r) + (comp1.r * comp2.i)) / ((comp2.r * comp2.r) + (comp2.i * comp2.i));
+        result.i = ((comp1.i * comp2.r) - (comp1.r * comp2.i)) / ((comp2.r * comp2.r) + (comp2.i * comp2.i));
         
         return result;
     } //divComplex(Complex, Complex)
     
-    public int magComplex(Complex comp) {
+    public static double magComplex(Complex comp) {
         
-        int tempR = (comp.r * comp.r);
-        int tempI = (comp.i * comp.i);
-        int result = (tempR + tempI);
+        double tempR = (comp.r * comp.r);
+        double tempI = (comp.i * comp.i);
+        double result = (tempR + tempI);
         
         result = (int) Math.sqrt(result);
         
         return result;        
     } //magComplex(complex)
     
-    public void printComplex(Complex comp) {
+    public static void printComplex(Complex comp) {
         
         if (comp.i < 0) {
-            System.out.print(comp.r + " - " + Math.abs(comp.i) + "i");
+            System.out.println(comp.r + " - " + Math.abs(comp.i) + "i");
         } //if
         
         if (comp.i >= 0) {
-            System.out.print(comp.r + " + " + comp.i + "i");
+            System.out.println(comp.r + " + " + comp.i + "i");
         } //if
     } //printComplex(complex)   
 } //Complex
