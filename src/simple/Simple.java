@@ -12,6 +12,12 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
+/**
+ *
+ * @author Logan Conley
+ * @version April 15 2020
+ */
+
 public class Simple extends JFrame {
     
     private static final int SIMPLE_WIDTH = 512;
@@ -54,7 +60,8 @@ public class Simple extends JFrame {
         Complex.printComplex(Complex.subComplex(test1, test2));
         Complex.printComplex(Complex.multComplex(test1, test2));
         Complex.printComplex(Complex.divComplex(test1, test2));
+        System.out.println(Complex.magComplex(test2));
         
                 
-    } // main ( S t r i n g [ ] )
-} // S imple
+    } //main(String[])
+} //Simple

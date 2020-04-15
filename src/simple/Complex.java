@@ -6,10 +6,6 @@
 package simple;
 
 
-/**
- *
- * @author Logan Conley
- */
 public class Complex {
     
     double r;
@@ -71,7 +67,7 @@ public class Complex {
         double tempI = (comp.i * comp.i);
         double result = (tempR + tempI);
         
-        result = (int) Math.sqrt(result);
+        result = Math.sqrt(result);
         
         return result;        
     } //magComplex(complex)
