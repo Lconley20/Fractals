@@ -5,12 +5,9 @@
  */
 package simple ;
 
-import java.awt.Color;
-import java.awt.Component;
 import java.awt.Container;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.Timer;
+
 
 /**
  *
@@ -22,7 +19,7 @@ public class Simple extends JFrame {
     
     private static final int SIMPLE_WIDTH = 512;
     private static final int SIMPLE_HEIGHT = 512;
-    private static final String SIMPLE_TITLE = "Simple";
+    private static final String SIMPLE_TITLE = "Fractal";
 
     public Simple() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -31,37 +28,13 @@ public class Simple extends JFrame {
 
         Container pane = this.getContentPane();
 
-//      JPanel panel = new JPanel();
-//      panel.setBackground( Color.CYAN);
-//      pane.add(panel);
-
-//      SimplePicturepanel = newSimplePicture();
-//      pane.add(panel);
-
-//      SimpleBitmappanel = newSimpleBitmap();
-//      pane.add(panel);
-
-//      SimpleImagepanel = newSimpleImage();
-//      pane.add(panel);
-
-//      SimpleAnimationpanel = newSimpleAnimation();
-//      pane.add(panel);
-//      Timer timer = new Timer(20, panel);
-//      timer.start();
+        SimpleBitmap panel = new SimpleBitmap();
+        pane.add(panel);
 
         this.setVisible(true);
-    } // Simple()
+    } //Simple()
 
     public static void main(String[] args) {
-        Simple simple = new Simple();
-        Complex test1 = new Complex(3, 4);
-        Complex test2 = new Complex(2, 5);
-        Complex.printComplex(Complex.addComplex(test1, test2));
-        Complex.printComplex(Complex.subComplex(test1, test2));
-        Complex.printComplex(Complex.multComplex(test1, test2));
-        Complex.printComplex(Complex.divComplex(test1, test2));
-        System.out.println(Complex.magComplex(test2));
-        
-                
+        Simple simple = new Simple();               
     } //main(String[])
 } //Simple

@@ -15,71 +15,77 @@ public class Complex {
         
     } //Complex()
     
-    Complex(int xReal, int yImaginary) {
+    Complex(double xReal, double yImaginary) {
         
         r = xReal;
         i = yImaginary;
     } //Complex(int, int)
     
-    public static Complex addComplex(Complex comp1, Complex comp2) {
+    public Complex addComplex(Complex comp) {
         
         Complex result = new Complex();
         
-        result.r = comp1.r + comp2.r;
-        result.i = comp1.i + comp2.i;
+        result.r = this.r + comp.r;
+        result.i = this.i + comp.i;
         
         return result;
     } //addComplex(Complex, Complex)
     
-    public static Complex subComplex(Complex comp1, Complex comp2) {
+    public Complex subComplex(Complex comp) {
         
         Complex result = new Complex();
         
-        result.r = comp1.r - comp2.r;
-        result.i = comp1.i - comp2.i;
+        result.r = this.r - comp.r;
+        result.i = this.i - comp.i;
                 
         return result;
     } //subComplex(Complex, Complex)
     
-    public static Complex multComplex(Complex comp1, Complex comp2) {
+    public Complex multComplex(Complex comp) {
         
         Complex result = new Complex();
         
-        result.r = (comp1.r * comp2.r) - (comp1.i * comp2.i);
-        result.i = (comp1.r * comp2.i) + (comp1.i * comp2.r);
+        result.r = (this.r * comp.r) - (this.i * comp.i);
+        result.i = (this.r * comp.i) + (this.i * comp.r);
         
         return result;
     } //multComplex(Complex, Complex)
     
-    public static Complex divComplex(Complex comp1, Complex comp2) {
+    public Complex divComplex(Complex comp) {
         
         Complex result = new Complex();
         
-        result.r = ((comp1.r * comp2.r) + (comp1.i * comp2.i)) / ((comp2.r * comp2.r) + (comp2.i * comp2.i));
-        result.i = ((comp1.i * comp2.r) - (comp1.r * comp2.i)) / ((comp2.r * comp2.r) + (comp2.i * comp2.i));
+        result.r = ((this.r * comp.r) + (this.i * comp.i)) / ((comp.r * comp.r) + (comp.i * comp.i));
+        result.i = ((this.i * comp.r) - (this.r * comp.i)) / ((comp.r * comp.r) + (comp.i * comp.i));
         
         return result;
     } //divComplex(Complex, Complex)
-    
-    public static double magComplex(Complex comp) {
+       
+    public double sqrMagComplex() {
         
-        double tempR = (comp.r * comp.r);
-        double tempI = (comp.i * comp.i);
+        double tempR = (this.r * this.r);
+        double tempI = (this.i * this.i);
         double result = (tempR + tempI);
         
+        return result;
+    } //sqrMagComplex(Complex)
+    
+    public double magComplex() {
+
+        double result = this.sqrMagComplex();
         result = Math.sqrt(result);
-        
+
         return result;        
     } //magComplex(complex)
     
-    public static void printComplex(Complex comp) {
+    public void printComplex() {
         
-        if (comp.i < 0) {
-            System.out.println(comp.r + " - " + Math.abs(comp.i) + "i");
+        if (this.i < 0) {
+            System.out.println(this.r + " - " + Math.abs(this.i) + "i");
         } //if
         
-        if (comp.i >= 0) {
-            System.out.println(comp.r + " + " + comp.i + "i");
+        if (this.i >= 0) {
+            System.out.println(this.r + " + " + this.i + "i");
         } //if
     } //printComplex(complex)   
 } //Complex
